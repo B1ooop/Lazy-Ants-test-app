@@ -1,0 +1,9 @@
+<form [formGroup]="notationForm" (submit)="notationFormSubmit()">
+
+    <label>title</label>
+    <input formControlName="title">
+    <label>description</label>
+    <input formControlName="description">
+    <button mat-button type="submit">{{saveButton}}</button>
+</form>
+

@@ -1,0 +1,31 @@
+<div *ngFor="let notation of notationsArray">
+    <mat-card>
+
+        <mat-card-header>
+            <mat-title>
+                {{notation.title}}
+            </mat-title>
+        </mat-card-header>
+
+        <mat-content>
+            {{notation.description}}
+        </mat-content>
+
+        <mat-card-actions>
+            <button [matMenuTriggerFor]="menu">
+                <mat-icon>settings</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <mat-icon [routerLink]="['/edit', notation.id]">edit</mat-icon>
+                <mat-icon (click)="modalWindowService.confirmation('delete', notation.id)">delete</mat-icon>
+            </mat-menu>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+
+<a routerLink="/create">
+    <mat-icon>add_circle</mat-icon>
+</a>
+
+<a (click)="addLS()">addLS</a>
