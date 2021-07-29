@@ -4,7 +4,7 @@
     <div class="actions-container" mat-dialog-actions>
         <button mat-raised-button class="capitalize" mat-dialog-close>{{cancel}}</button>
         <button [ngClass]="color" mat-raised-button mat-dialog-close (click)="this.mtService.chooseAction(data)"
-            [routerLink]="'/home'">
+            [routerLink]="'/'">
             <span class="capitalize">{{action}}</span>
         </button>
     </div>

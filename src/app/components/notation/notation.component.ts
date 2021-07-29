@@ -33,7 +33,7 @@ export class NotationComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     this.ifEdit()
     this.notationFormInit();
   }
@@ -42,12 +42,16 @@ export class NotationComponent implements OnInit {
   ifEdit(): void {
     if (this.activatedRoute.snapshot.url[1]) {
       this.editNotation = this.notationsArray.filter(notation => notation.id == this.activatedRoute.snapshot.url[1].path)[0];
+      this.edit = true;
+      this.saveButton = "Сохранить изменения";
+      this.action = "saveEdit";
+    } else {
+      this.edit = false;
+      this.saveButton = "Создать нотацию";
+      this.action = "saveNew";
     }
-    this.edit = this.router.url.includes("edit")
-    this.edit ? (this.saveButton = "Сохранить изменения", this.action = "saveEdit") : (this.saveButton = "Создать нотацию", this.action = "saveNew");
   }
 
-  //При переключении вкладок(назад, вперед - ошибки)
   notationFormInit(): void {
     this.notationForm = this.fb.group({
       title: [this.edit ? this.editNotation.title : "", [Validators.required]],

@@ -1,21 +1,30 @@
 <div class="container">
     <form [formGroup]="notationForm" (submit)="notationFormSubmit()">
-        <label>title</label>
-        <input formControlName="title">
-        <label>description</label>
-        <input formControlName="description">
-        <button mat-button type="submit">{{saveButton}}</button>
+        <div class="input-container">
+            <input class="title" formControlName="title" placeholder="Название">
+            <textarea class="description" formControlName="description" placeholder="Описание"></textarea>
+            <button class="submit-button" type="submit">
+                <mat-icon>check</mat-icon>
+            </button>
+        </div>
+        
     </form>
 
-    <div *ngIf="edit; else cancel">
-        <button mat-raised-button class="warn"
-            (click)="modalWindowService.confirmation('delete', editNotation.id)">Удалить нотацию</button>
-        <button mat-raised-button class="warn" (click)="modalWindowService.confirmation('cancelEdit')">Отменить
-            редактирование</button>
-    </div>
+    <div class="footer-buttons-container">
 
-    <ng-template #cancel>
-        <button mat-raised-button class="warn" (click)="modalWindowService.confirmation('cancelNew')">Отменить
-            создание</button>
-    </ng-template>
+        <div *ngIf="edit; else cancel">
+            <button (click)="modalWindowService.confirmation('cancelEdit')">
+                <mat-icon>close</mat-icon>
+            </button>
+            <button (click)="modalWindowService.confirmation('delete', editNotation.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+
+        <ng-template #cancel>
+            <button (click)="modalWindowService.confirmation('cancelNew')">
+                <mat-icon>close</mat-icon>
+            </button>
+        </ng-template>
+    </div>
 </div>

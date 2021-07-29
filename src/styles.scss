@@ -14,6 +14,19 @@ body {
 }
 
 //buttons
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+ }
+
+ .material-icons {
+     cursor: pointer;
+     color: rgba(0, 0, 0, 0.548);
+     font-size: 22px;
+ }
+
 .color-basic {
     background-color: rgb(255, 255, 255);
 }
@@ -35,8 +48,4 @@ body {
     &:hover {
         background-color: rgb(90, 230, 97);
     }
-}
-
-.container {
-    width: 90%;
 }

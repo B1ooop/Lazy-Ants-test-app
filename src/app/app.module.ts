@@ -4,7 +4,6 @@ import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotationComponent } from './components/notation/notation.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,11 +17,11 @@ import { ModalWindowComponent } from './components/modal-window/modal-window.com
 import { MatButtonModule } from '@angular/material/button';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NotationComponent,
-    HomeComponent,
     ModalWindowComponent,
 
 

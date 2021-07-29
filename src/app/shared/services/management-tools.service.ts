@@ -27,15 +27,16 @@ export class ManagementToolsService {
       case 'saveNew':
         this.saveNew(data.notation);
         break;
-        case 'saveEdit':
-          this.saveEdit(data.notation);
-          break;      
+      case 'saveEdit':
+        this.saveEdit(data.notation);
+        break;
     }
   }
 
 
   saveNew(notation) {
-    let tempArr = this.LS.data;
+    let tempArr;
+    this.LS.data ? tempArr = this.LS.data : tempArr = [];
     tempArr.push(notation);
     this.LS.data = tempArr;
   }
