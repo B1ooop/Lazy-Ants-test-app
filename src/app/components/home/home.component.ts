@@ -27,25 +27,15 @@ export class HomeComponent implements OnInit {
   }
 
   addLS() {
-    this.LS.data = [
-      {
+    let i = 0;
+    while (i < 10) {
+      this.notationsArray.push({
         id: this.mtService.setId(),
-        title: "notation 1",
-        description: "description 1"
-      },
-      {
-        id: this.mtService.setId(),
-        title: "notation 2",
-        description: "description 2"
-      },
-      {
-        id: this.mtService.setId(),
-        title: "notation 3",
-        description: "description 3"
-      },
-    ];
-
-    this.notationsArray = this.LS.data;
+        title: "Lorem ipsum dolor sit amet consectetur ",
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab amet corrupti quod numquam ipsa consequatur voluptatem exercitationem unde nemo nesciunt"
+      })
+      i++;
+    }
   }
 
 }

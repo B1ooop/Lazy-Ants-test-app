@@ -15,7 +15,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalWindowComponent } from './components/modal-window/modal-window.component';
-
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { ModalWindowComponent } from './components/modal-window/modal-window.com
     NotationComponent,
     HomeComponent,
     ModalWindowComponent,
-    
+
 
   ],
   imports: [
@@ -37,6 +37,7 @@ import { ModalWindowComponent } from './components/modal-window/modal-window.com
     MatIconModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatButtonModule,
 
   ],
   providers: [],

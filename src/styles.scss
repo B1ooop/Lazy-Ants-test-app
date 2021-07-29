@@ -1,2 +1,42 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+    background-color: rgb(236, 236, 236);
+}
+body {
+    font-size: 20px;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-typography {
+    font-size: 16px;
+}
+
+//buttons
+.color-basic {
+    background-color: rgb(255, 255, 255);
+}
+
+.color-warn {
+    color: white;
+    background-color: rgb(243, 69, 69);
+    border: 1px solid rgb(255, 34, 34) !important;
+
+    &:hover {
+        background-color: rgb(255, 34, 34);
+    }
+}
+
+.color-success {
+    background-color: rgb(118, 224, 124);
+    border: 1px solid rgb(90, 230, 97) !important;
+
+    &:hover {
+        background-color: rgb(90, 230, 97);
+    }
+}
+
+.container {
+    width: 90%;
+}

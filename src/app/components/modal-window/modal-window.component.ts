@@ -9,6 +9,7 @@ import { ManagementToolsService } from 'src/app/shared/services/management-tools
   styleUrls: ['./modal-window.component.scss']
 })
 export class ModalWindowComponent implements OnInit {
+  color: string;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
@@ -22,20 +23,25 @@ export class ModalWindowComponent implements OnInit {
     switch (this.data.action) {
       case 'delete':
         this.action = "удалить нотацию";
+        this.color = "color-warn";
         break;
       case 'saveNew':
         this.action = "создать нотацию";
+        this.color = "color-success";
         break;
       case 'saveEdit':
         this.action = "сохранить изменения";
+        this.color = "color-success";
         break;
       case 'cancelEdit':
         this.action = "отменить редактирование";
         this.cancel = "остаться";
+        this.color = "color-warn";
         break;
       case 'cancelNew':
         this.action = "отменить создание";
         this.cancel = "остаться";
+        this.color = "color-warn";
         break;
     }
   }

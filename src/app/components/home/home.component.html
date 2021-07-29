@@ -1,31 +1,41 @@
-<div *ngFor="let notation of notationsArray">
-    <mat-card>
+<article class="container"><router-outlet></router-outlet>
 
-        <mat-card-header>
-            <mat-title>
-                {{notation.title}}
-            </mat-title>
-        </mat-card-header>
+    <section class="notation-list">
 
-        <mat-content>
-            {{notation.description}}
-        </mat-content>
+        <div class="notation-list__title">
+            <h1>Список нотаций</h1>
+        </div>
 
-        <mat-card-actions>
-            <button [matMenuTriggerFor]="menu">
-                <mat-icon>settings</mat-icon>
+        <div class="notation-list__addNotation">
+            <button mat-fab color="primary" routerLink="/create">
+                <mat-icon>add</mat-icon>
             </button>
-            <mat-menu #menu="matMenu">
-                <mat-icon [routerLink]="['/edit', notation.id]">edit</mat-icon>
-                <mat-icon (click)="modalWindowService.confirmation('delete', notation.id)">delete</mat-icon>
-            </mat-menu>
-        </mat-card-actions>
-    </mat-card>
-</div>
 
+        </div>
 
-<a routerLink="/create">
-    <mat-icon>add_circle</mat-icon>
-</a>
+        <div class="notation-list__content">
+            <div class="notation" *ngFor="let notation of notationsArray">
 
-<a (click)="addLS()">addLS</a>
+                
+
+                <mat-card>
+                    <mat-card-actions>
+                        <mat-icon [routerLink]="['/edit', notation.id]">edit</mat-icon>
+                        <mat-icon (click)="modalWindowService.confirmation('delete', notation.id)">delete</mat-icon>
+                    </mat-card-actions>
+
+                    <mat-card-header>
+                        <mat-title>
+                            {{notation.title}}
+                        </mat-title>
+                    </mat-card-header>
+
+                    <mat-content>
+                        {{notation.description}}
+                    </mat-content>
+
+                </mat-card>
+            </div>
+        </div>
+    </section>
+</article>

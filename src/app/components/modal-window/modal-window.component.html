@@ -1,8 +1,11 @@
-<h1 mat-dialog-title>Подтверждение</h1>
-<div mat-dialog-content>Вы действительно хотите {{action}} ?</div>
-<div mat-dialog-actions>
-    <button mat-button mat-dialog-close class="capitalize">{{cancel}}</button>
-    <button mat-button mat-dialog-close (click)="this.mtService.chooseAction(data)" [routerLink]="'/home'">
-        <span class="capitalize">{{action}}</span>
-    </button>
+<div class="container">
+    <h1 mat-dialog-title>Подтверждение</h1>
+    <div mat-dialog-content>Вы действительно хотите {{action}} ?</div>
+    <div class="actions-container" mat-dialog-actions>
+        <button mat-raised-button class="capitalize" mat-dialog-close>{{cancel}}</button>
+        <button [ngClass]="color" mat-raised-button mat-dialog-close (click)="this.mtService.chooseAction(data)"
+            [routerLink]="'/home'">
+            <span class="capitalize">{{action}}</span>
+        </button>
+    </div>
 </div>
