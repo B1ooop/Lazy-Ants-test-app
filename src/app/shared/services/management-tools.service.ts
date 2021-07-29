@@ -27,13 +27,25 @@ export class ManagementToolsService {
       case 'saveNew':
         this.saveNew(data.notation);
         break;
+        case 'saveEdit':
+          this.saveEdit(data.notation);
+          break;      
     }
   }
+
 
   saveNew(notation) {
     let tempArr = this.LS.data;
     tempArr.push(notation);
     this.LS.data = tempArr;
+  }
+
+  saveEdit(notationEdit) {
+    let tempArr = this.LS.data;
+    this.LS.data = tempArr.map(notation => {
+      if (notation.id == notationEdit.id) { return notationEdit; }
+      return notation;
+    });
   }
 
   delete(id: string): void {

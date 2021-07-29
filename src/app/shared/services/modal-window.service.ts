@@ -12,7 +12,7 @@ export class ModalWindowService {
     public dialog: MatDialog,
   ) { }
 
-  confirmation(action: string, id: string, notation?: Notation) {
+  confirmation(action: string, id?: string, notation?: Notation) {
     this.dialog.open(ModalWindowComponent, { data: { action: action, id: id, notation: notation } });
   }
 }

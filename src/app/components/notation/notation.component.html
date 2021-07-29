@@ -1,5 +1,4 @@
 <form [formGroup]="notationForm" (submit)="notationFormSubmit()">
-
     <label>title</label>
     <input formControlName="title">
     <label>description</label>
@@ -7,3 +6,11 @@
     <button mat-button type="submit">{{saveButton}}</button>
 </form>
 
+<div *ngIf="edit; else cancel">
+    <button (click)="modalWindowService.confirmation('delete', editNotation.id)">Удалить нотацию</button>
+    <button (click)="modalWindowService.confirmation('cancelEdit')">Отменить редактирование</button>
+</div>
+
+<ng-template #cancel>
+    <button (click)="modalWindowService.confirmation('cancelNew')">Отменить создание</button>
+</ng-template>

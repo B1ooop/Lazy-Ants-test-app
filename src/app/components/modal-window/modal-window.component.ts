@@ -16,6 +16,7 @@ export class ModalWindowComponent implements OnInit {
   ) { }
 
   action: string;
+  cancel: string = "отменить";
 
   ngOnInit(): void {
     switch (this.data.action) {
@@ -27,6 +28,14 @@ export class ModalWindowComponent implements OnInit {
         break;
       case 'saveEdit':
         this.action = "сохранить изменения";
+        break;
+      case 'cancelEdit':
+        this.action = "отменить редактирование";
+        this.cancel = "остаться";
+        break;
+      case 'cancelNew':
+        this.action = "отменить создание";
+        this.cancel = "остаться";
         break;
     }
   }
