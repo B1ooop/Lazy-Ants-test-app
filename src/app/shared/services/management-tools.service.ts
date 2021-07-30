@@ -33,7 +33,6 @@ export class ManagementToolsService {
     }
   }
 
-
   saveNew(notation) {
     let tempArr;
     this.LS.data ? tempArr = this.LS.data : tempArr = [];

@@ -4,10 +4,7 @@ import { NotationComponent } from './components/notation/notation.component';
 
 const routes: Routes = [
   { path: 'edit/:id', component: NotationComponent, },
-  { path: 'create', component: NotationComponent, },
-
-  { path: 'edit/:id', component: NotationComponent },
-  { path: 'create', component: NotationComponent },
+  { path: 'create', component: NotationComponent, },  
 ];
 
 @NgModule({
